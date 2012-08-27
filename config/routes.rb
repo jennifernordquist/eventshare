@@ -3,6 +3,10 @@ Eventshare::Application.routes.draw do
 
   root :to => "dashboard_controller#index"
 
+  resources :groups
+
+  resources :recipients
+
   resources :email_blasts
 
   resources :text_blasts

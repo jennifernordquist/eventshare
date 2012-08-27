@@ -9,7 +9,13 @@
 #  created_at :datetime        not null
 #  updated_at :datetime        not null
 #
+require 'twilio-ruby'
 
 class TextBlast < ActiveRecord::Base
   attr_accessible :contents, :done, :schedule
+
+  def dispatch
+
+  end 
+
 end

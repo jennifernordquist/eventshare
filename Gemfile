@@ -26,6 +26,7 @@ gem 'aws-sdk', '~> 1.3.4'
 gem 'paperclip', '~> 2.7'
 gem 'heroku', '~> 2.28.10'
 gem 'thin'
+gem 'twilio-ruby'
 
 gem 'omniauth'
 gem 'omniauth-facebook'
