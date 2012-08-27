@@ -1,0 +1,32 @@
+# == Schema Information
+#
+# Table name: venues
+#
+#  id         :integer         not null, primary key
+#  street     :string(255)
+#  street2    :string(255)
+#  city       :string(255)
+#  state      :string(255)
+#  zip        :string(255)
+#  location   :string(255)
+#  created_at :datetime        not null
+#  updated_at :datetime        not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  street: MyString
+  street2: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  location: MyString
+
+two:
+  street: MyString
+  street2: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  location: MyString

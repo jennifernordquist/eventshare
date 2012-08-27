@@ -1,4 +1,6 @@
 Eventshare::Application.routes.draw do
+  resources :venues
+
   devise_for :users
 
   root :to => "dashboard_controller#index"

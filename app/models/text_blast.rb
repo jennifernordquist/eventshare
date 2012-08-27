@@ -8,6 +8,19 @@
 #  schedule   :datetime
 #  created_at :datetime        not null
 #  updated_at :datetime        not null
+#  group_id   :integer
+#
+
+# == Schema Information
+#
+# Table name: text_blasts
+#
+#  id         :integer         not null, primary key
+#  done       :boolean
+#  contents   :string(255)
+#  schedule   :datetime
+#  created_at :datetime        not null
+#  updated_at :datetime        not null
 #
 require 'twilio-ruby'
 
