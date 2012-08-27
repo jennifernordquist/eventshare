@@ -5,8 +5,8 @@ development:
   encoding: unicode
   database: eventshare_development
   pool: 5
-  username: admin 
-  password: baconstripkittenrainbow 
+  username:
+  password:
   host: localhost
 
 production:
@@ -14,6 +14,6 @@ production:
   encoding: unicode
   database: eventshare_production
   pool: 5
-  username: admin 
-  password: baconstripkittenrainbow 
+  username: 
+  password:
   host: localhost
