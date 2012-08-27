@@ -1,0 +1,29 @@
+<%= form_for(@text_blast) do |f| %>
+  <% if @text_blast.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@text_blast.errors.count, "error") %> prohibited this text_blast from being saved:</h2>
+
+      <ul>
+      <% @text_blast.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :done %><br />
+    <%= f.check_box :done %>
+  </div>
+  <div class="field">
+    <%= f.label :contents %><br />
+    <%= f.text_field :contents %>
+  </div>
+  <div class="field">
+    <%= f.label :schedule %><br />
+    <%= f.text_field :schedule %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

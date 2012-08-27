@@ -1,0 +1,27 @@
+<h1>Listing text_blasts</h1>
+
+<table>
+  <tr>
+    <th>Done</th>
+    <th>Contents</th>
+    <th>Schedule</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @text_blasts.each do |text_blast| %>
+  <tr>
+    <td><%= text_blast.done %></td>
+    <td><%= text_blast.contents %></td>
+    <td><%= text_blast.schedule %></td>
+    <td><%= link_to 'Show', text_blast %></td>
+    <td><%= link_to 'Edit', edit_text_blast_path(text_blast) %></td>
+    <td><%= link_to 'Destroy', text_blast, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Text blast', new_text_blast_path %>
