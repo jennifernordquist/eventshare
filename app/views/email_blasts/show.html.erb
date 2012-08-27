@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Done:</b>
+  <%= @email_blast.done %>
+</p>
+
+<p>
+  <b>Contents:</b>
+  <%= @email_blast.contents %>
+</p>
+
+<p>
+  <b>Schedule:</b>
+  <%= @email_blast.schedule %>
+</p>
+
+
+<%= link_to 'Edit', edit_email_blast_path(@email_blast) %> |
+<%= link_to 'Back', email_blasts_path %>

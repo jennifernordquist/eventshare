@@ -1,0 +1,27 @@
+<h1>Listing email_blasts</h1>
+
+<table>
+  <tr>
+    <th>Done</th>
+    <th>Contents</th>
+    <th>Schedule</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @email_blasts.each do |email_blast| %>
+  <tr>
+    <td><%= email_blast.done %></td>
+    <td><%= email_blast.contents %></td>
+    <td><%= email_blast.schedule %></td>
+    <td><%= link_to 'Show', email_blast %></td>
+    <td><%= link_to 'Edit', edit_email_blast_path(email_blast) %></td>
+    <td><%= link_to 'Destroy', email_blast, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Email blast', new_email_blast_path %>

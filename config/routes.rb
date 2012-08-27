@@ -1,4 +1,6 @@
 Eventshare::Application.routes.draw do
+  resources :email_blasts
+
   resources :text_blasts
 
   resources :events
