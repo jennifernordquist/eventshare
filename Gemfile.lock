@@ -36,8 +36,11 @@ GEM
       json (~> 1.4)
       nokogiri (>= 1.4.4)
       uuidtools (~> 2.1)
+    bcrypt-ruby (3.0.1)
     builder (3.0.0)
+    cancan (1.6.8)
     cocaine (0.2.1)
+    coderay (1.0.7)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -46,6 +49,11 @@ GEM
       execjs
     coffee-script-source (1.3.3)
     daemons (1.1.9)
+    devise (2.1.2)
+      bcrypt-ruby (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (~> 3.1)
+      warden (~> 1.2.1)
     erubis (2.7.0)
     eventmachine (0.12.10)
     excon (0.15.5)
@@ -81,6 +89,7 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    method_source (0.8)
     mime-types (1.19)
     multi_json (1.3.6)
     multi_xml (0.5.1)
@@ -101,6 +110,7 @@ GEM
     omniauth-oauth2 (1.1.0)
       oauth2 (~> 0.8.0)
       omniauth (~> 1.0)
+    orm_adapter (0.4.0)
     paperclip (2.7.0)
       activerecord (>= 2.3.0)
       activesupport (>= 2.3.2)
@@ -108,6 +118,12 @@ GEM
       mime-types
     pg (0.14.0)
     polyglot (0.3.3)
+    pry (0.9.10)
+      coderay (~> 1.0.5)
+      method_source (~> 0.8)
+      slop (~> 3.3.1)
+    pry-rails (0.2.1)
+      pry (>= 0.9.10)
     rack (1.4.1)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -143,6 +159,7 @@ GEM
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
+    slop (3.3.2)
     sprockets (2.1.3)
       hike (~> 1.2)
       rack (~> 1.0)
@@ -161,6 +178,8 @@ GEM
       execjs (>= 0.3.0)
       multi_json (~> 1.3)
     uuidtools (2.1.3)
+    warden (1.2.1)
+      rack (>= 1.0)
 
 PLATFORMS
   ruby
@@ -168,13 +187,16 @@ PLATFORMS
 DEPENDENCIES
   annotate (~> 2.4.1.beta)
   aws-sdk (~> 1.3.4)
+  cancan
   coffee-rails (~> 3.2.1)
+  devise
   heroku (~> 2.28.10)
   jquery-rails
   omniauth
   omniauth-facebook
   paperclip (~> 2.7)
   pg
+  pry-rails
   railroady
   rails (= 3.2.7)
   rmagick (= 2.12.0)

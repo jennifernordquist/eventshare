@@ -30,9 +30,13 @@ gem 'thin'
 gem 'omniauth'
 gem 'omniauth-facebook'
 
+gem 'devise'
+gem 'cancan'
+
 group :development do
   gem 'annotate', '~> 2.4.1.beta'
   gem 'railroady'
+  gem 'pry-rails'
 end
 
 group :production do
