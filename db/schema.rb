@@ -38,6 +38,22 @@ ActiveRecord::Schema.define(:version => 20120827211221) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "groups", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "recipients", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "facebook_id"
+    t.string   "rsvp"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
   create_table "text_blasts", :force => true do |t|
     t.boolean  "done"
     t.string   "contents"
