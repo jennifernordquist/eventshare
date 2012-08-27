@@ -16,4 +16,6 @@ class Event < ActiveRecord::Base
 
   has_many :groups
 
+  has_one :venue
+
 end

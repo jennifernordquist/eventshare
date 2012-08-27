@@ -12,4 +12,7 @@
 
 class Auth < ActiveRecord::Base
   attr_accessible :provider, :secret, :token
+
+  belongs_to :user
+
 end

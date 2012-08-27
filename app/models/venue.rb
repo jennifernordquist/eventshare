@@ -11,8 +11,13 @@
 #  location   :string(255)
 #  created_at :datetime        not null
 #  updated_at :datetime        not null
+#  event_id   :integer
 #
 
 class Venue < ActiveRecord::Base
   attr_accessible :city, :location, :state, :street, :street2, :zip
+
+  belongs_to :event
+
+
 end
