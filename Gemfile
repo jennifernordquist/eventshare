@@ -5,7 +5,7 @@ gem 'rails', '3.2.7'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+gem 'pg'
 
 
 # Gems used only for assets and not required
@@ -21,6 +21,23 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+gem 'aws-sdk', '~> 1.3.4'
+gem 'paperclip', '~> 2.7'
+gem 'heroku', '~> 2.28.10'
+gem 'thin'
+
+gem 'omniauth'
+gem 'omniauth-facebook'
+
+group :development do
+  gem 'annotate', '~> 2.4.1.beta'
+  gem 'railroady'
+end
+
+group :production do
+  gem "rmagick", "2.12.0", :require => 'RMagick'
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
