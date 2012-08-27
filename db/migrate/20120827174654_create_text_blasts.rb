@@ -3,7 +3,7 @@ class CreateTextBlasts < ActiveRecord::Migration
     create_table :text_blasts do |t|
       t.boolean :done
       t.string :contents
-      t.datettime :schedule
+      t.datetime :schedule
 
       t.timestamps
     end

@@ -3,7 +3,7 @@ class CreateEmailBlasts < ActiveRecord::Migration
     create_table :email_blasts do |t|
       t.boolean :done
       t.string :contents
-      t.datettime :schedule
+      t.datetime :schedule
 
       t.timestamps
     end
