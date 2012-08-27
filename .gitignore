@@ -13,3 +13,8 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore secret stuff
+eventshare_heroku
+eventshare_heroku.pub
+
