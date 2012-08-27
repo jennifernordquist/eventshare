@@ -14,6 +14,8 @@ require 'twilio-ruby'
 class TextBlast < ActiveRecord::Base
   attr_accessible :contents, :done, :schedule
 
+  belongs_to :group
+
   def dispatch
 
   end 
