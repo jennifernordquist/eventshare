@@ -11,8 +11,7 @@
             %a.page-nav-link{:href => "#"}
               Settings
           %li.page-nav
-            %a.page-nav-link{:href =>  destroy_user_session_path, :method => :delete }
-              Sign Out
+            = link_to "Sign Out", destroy_user_session_path, :method => :delete, :class => "page-nav-link"
         - else
           %li.page-nav
             %a.page-nav-link{:href =>  new_user_session_path }
