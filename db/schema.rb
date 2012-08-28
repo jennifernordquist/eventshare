@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120828001231) do
+ActiveRecord::Schema.define(:version => 20120828015038) do
 
   create_table "auths", :force => true do |t|
     t.string   "token"
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(:version => 20120828001231) do
 
   create_table "groups_recipients", :id => false, :force => true do |t|
     t.integer "group_id"
-    t.integer "recipeient_id"
+    t.integer "recipient_id"
   end
 
   create_table "recipients", :force => true do |t|
