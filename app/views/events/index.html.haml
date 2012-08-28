@@ -1,0 +1,15 @@
+.container_16
+  %header#event_full_name My Events
+  %table
+    %tr
+      %th Name
+      %th Description
+      %th Start Time
+      %th End Time
+    - @events.each do |event|
+      %tr
+        %td= link_to event.name, "#{event_path(event.id)}/dashboard/overview"
+        %td= truncate(event.desc, :length => 60)
+        %td= event.start_time.to_formatted_s(:long)
+        %td= event.end_time.to_formatted_s(:long)
+

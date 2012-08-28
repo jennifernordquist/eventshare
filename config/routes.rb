@@ -1,15 +1,6 @@
 Eventshare::Application.routes.draw do
   root :to => "dashboard#overview"
 
-  get "dashboard/overview"
-  get "dashboard/event"
-  get "dashboard/audience"
-  get "dashboard/social"
-  get "dashboard/flyer"
-  get "dashboard/messages"
-  get "dashboard/newsms"
-  get "dashboard/newemail"
-
   match "/sign_up" => "auth#register" 
   match "/sign_in" => "auth#login" 
 
@@ -21,5 +12,14 @@ Eventshare::Application.routes.draw do
   resources :recipients
   resources :email_blasts
   resources :text_blasts
-  resources :events
+  resources :events do
+    match "dashboard/overview" => "dashboard#overview"
+    match "dashboard/event" => "dashboard#event"
+    match "dashboard/audience" => "dashboard#audience"
+    match "dashboard/messages" => "dashboard#messages"
+    match "dashboard/social" => "dashboard#social"
+    match "dashboard/flyer" => "dashboard#flyer"
+    match "dashboard/newemail" => "dashboard#newemail"
+    match "dashboard/newsms" => "dashboard#newsms"
+  end
 end
