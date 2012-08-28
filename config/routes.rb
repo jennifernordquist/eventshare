@@ -1,4 +1,6 @@
 Eventshare::Application.routes.draw do
+  match "/pages/index" => "pages#index"
+
   resources :settings
 
   resources :venues
