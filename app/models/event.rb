@@ -24,6 +24,8 @@ class Event < ActiveRecord::Base
 
   has_one :setting
 
+  has_many :recipients
+
   validates :desc, :start_time, :name, :user_id, :host, :presence => true
 
   after_create :create_default_group
