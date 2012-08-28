@@ -252,3 +252,59 @@ footer {
 	@include uppercase;
 	padding: 10px 0 10px 0;
 }
+
+.text-field {
+	width: 160px;
+	height: 20px;
+	color: $grey-dark;
+	background-color: $grey-light;
+	border-left: solid 3px $white;
+	padding: 4px 0 4px 8px;
+  -moz-box-shadow:    -3px 0px 0px  $blue;
+  -webkit-box-shadow: -3px 0px 0px  $blue;
+  box-shadow:         -3px 0px 0px  $blue;
+  &:hover {
+	  -moz-box-shadow:    -3px 0px 0px  $tan;
+		-webkit-box-shadow: -3px 0px 0px  $tan;
+		box-shadow:         -3px 0px 0px  $tan;
+  }
+  
+  i {
+  	color: $white;
+  }
+  input {
+		color: $grey-dark;
+  	float: left;
+  	width: 135px;
+  	&::-webkit-input-placeholder {
+    	color: $white;
+		}
+		&:-moz-placeholder {
+				color: $white;
+		}
+		&:-ms-input-placeholder {
+				color: $white;
+		}
+  }
+  button {
+  	float: left;
+		background: transparent;
+		border: 0;
+		outline: 0;
+		margin: 0;
+		width: 20px;
+		height: 20px;
+  }
+}
+
+input {
+	background: transparent;
+	border: 0;
+	outline: 0;
+}
+
+textarea {
+	background: transparent;
+	border: 0;
+	outline: 0;
+}

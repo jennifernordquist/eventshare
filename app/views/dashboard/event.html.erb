@@ -1,4 +1,62 @@
 <div class="container_16">
   <%= render "hub/sidebar" %>
-  <!--- Your stuff here -->
+    <div class="grid_11 prefix_1" id="partial">
+  	<header id="event_full_name">
+      	Event Full Name
+      </header>
+      <div class="grid_3 suffix_8">
+      	<form>
+        	<p>
+        		<span class="label">Start Date and Time:</span>
+        		<div class="text-field">
+        			<input type="text" placeholder="MM/DD/YY"/><br/>
+        			<button>
+        				<i class="icon-calendar"></i>
+        			</button>
+        		</div>
+        	</p><p>
+        		<span class="label">End Date and Time:</span>
+        		<div class="text-field">
+        			<input type="text" placeholder="MM/DD/YY"/><br/>
+        			<button>
+        				<i class="icon-calendar"></i>
+        			</button>
+        		</div>
+        	</p>
+        	<p>
+        		<span class="label">Host:</span>
+        		<div class="text-field">
+        			<input type="text" placeholder="Company/Organization"/><br/>
+        			<button>
+        				<i class="icon-chevron-down"></i>
+        			</button>
+        		</div>
+        	</p>
+        	<p>
+        		<span class="label">Venue:</span>
+        		<div class="text-field">
+        			<input type="text" placeholder="Location Name"/><br/>
+        			<button>
+        				<i class="icon-chevron-down"></i>
+        			</button>
+        		</div>
+        	</p>
+        	<p>
+        		<span class="label">Address:</span>
+        		<div class="text-field">
+        			<input type="text" placeholder="Street Address"/>
+        		</div>
+        		<br/>
+        		<div class="text-field">
+        			<input type="text" placeholder="City, ST, ZIP"/>
+        		</div>
+        	</p><p>
+        		<span class="label">Description:</span>
+        		<div class="text-field">
+        			<textarea name="description" rows="5" wrap="virtual" id="description"></textarea>
+        		</div>
+        	</p>
+        </form>
+      </div>
+  </div>
 </div>
