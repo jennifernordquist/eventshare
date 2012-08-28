@@ -6,6 +6,9 @@ Eventshare::Application.routes.draw do
   get "dashboard/audience"
   get "dashboard/social"
   get "dashboard/flyer"
+  get "dashboard/messages"
+  get "dashboard/newsms"
+  get "dashboard/newemail"
 
   match "/sign_up" => "auth#register" 
   match "/sign_in" => "auth#login" 

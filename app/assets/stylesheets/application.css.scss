@@ -307,4 +307,60 @@ textarea {
 	background: transparent;
 	border: 0;
 	outline: 0;
+	resize: none;
+	width: 276px;
+}
+
+.text-area {
+	width: 280px;
+	color: $grey-dark;
+	background-color: $grey-light;
+	border-left: solid 3px $white;
+	resize: none;
+  -moz-box-shadow:    -3px 0px 0px  $blue;
+  -webkit-box-shadow: -3px 0px 0px  $blue;
+  box-shadow:         -3px 0px 0px  $blue;
+  &:hover {
+	  -moz-box-shadow:    -3px 0px 0px  $tan;
+		-webkit-box-shadow: -3px 0px 0px  $tan;
+		box-shadow:         -3px 0px 0px  $tan;
+  }
+}
+
+#sms_remaining {
+	margin-left: 50px;
+}
+
+@mixin button {
+	@include bold;
+	color: $white;
+	@include uppercase;
+	border: none;
+	outline: none;
+	display: block;
+	line-height: 26px;
+	height: 26px;
+}
+
+.submit {
+	@include button;
+	background-color: $blue;
+}
+
+a {
+	color: $blue;
+}
+
+tbody tr:nth-child(even) {
+   background-color: $grey-light;
+}
+table {
+	cellspacing: 0px !important;
+}
+
+td {
+	padding: 5px;
+	cellspacing: 0px;
+	border: 0px;
+	outline: 0px;
 }
