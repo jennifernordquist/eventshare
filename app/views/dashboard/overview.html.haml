@@ -1,27 +1,5 @@
 .container_16
-  #sidebar.grid_4
-    %header#event_hub_nav_header
-      Event Hub
-    %nav
-      %ul
-        %li.hub-nav
-          %a.hub-nav-link.active{:href => "#"}
-            Overview
-        %li.hub-nav
-          %a.hub-nav-link{:href => "#"}
-            Event
-        %li.hub-nav
-          %a.hub-nav-link{:href => "#"}
-            Audience
-        %li.hub-nav
-          %a.hub-nav-link{:href => "#"}
-            Messages
-        %li.hub-nav
-          %a.hub-nav-link{:href => "#"}
-            Social
-        %li.hub-nav
-          %a.hub-nav-link{:href => "#"}
-            Flyer
+  = render "hub/sidebar"
   #partial.grid_11.prefix_1
     %header#event_full_name
       Event Full Name
