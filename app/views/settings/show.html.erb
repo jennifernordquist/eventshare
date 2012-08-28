@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Require email:</b>
+  <%= @setting.require_email %>
+</p>
+
+<p>
+  <b>Require phone:</b>
+  <%= @setting.require_phone %>
+</p>
+
+<p>
+  <b>Require rsvp:</b>
+  <%= @setting.require_rsvp %>
+</p>
+
+<p>
+  <b>Offer email:</b>
+  <%= @setting.offer_email %>
+</p>
+
+<p>
+  <b>Offer phone:</b>
+  <%= @setting.offer_phone %>
+</p>
+
+<p>
+  <b>Offer rsvp:</b>
+  <%= @setting.offer_rsvp %>
+</p>
+
+
+<%= link_to 'Edit', edit_setting_path(@setting) %> |
+<%= link_to 'Back', settings_path %>

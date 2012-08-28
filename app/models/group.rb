@@ -17,4 +17,6 @@ class Group < ActiveRecord::Base
   has_many :text_blasts
   has_many :email_blasts
 
+  has_and_belongs_to_many :recipients
+
 end

@@ -1,4 +1,6 @@
 Eventshare::Application.routes.draw do
+  resources :settings
+
   resources :venues
 
   devise_for :users

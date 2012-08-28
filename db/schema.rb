@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120827223151) do
+ActiveRecord::Schema.define(:version => 20120828001231) do
 
   create_table "auths", :force => true do |t|
     t.string   "token"
@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(:version => 20120827223151) do
     t.datetime "end_time"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "user_id"
+    t.string   "host"
   end
 
   create_table "groups", :force => true do |t|
@@ -45,6 +47,11 @@ ActiveRecord::Schema.define(:version => 20120827223151) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "event_id"
+  end
+
+  create_table "groups_recipients", :id => false, :force => true do |t|
+    t.integer "group_id"
+    t.integer "recipeient_id"
   end
 
   create_table "recipients", :force => true do |t|
@@ -55,6 +62,18 @@ ActiveRecord::Schema.define(:version => 20120827223151) do
     t.string   "rsvp"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "settings", :force => true do |t|
+    t.boolean  "require_email"
+    t.boolean  "require_phone"
+    t.boolean  "require_rsvp"
+    t.boolean  "offer_email"
+    t.boolean  "offer_phone"
+    t.boolean  "offer_rsvp"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.integer  "event_id"
   end
 
   create_table "text_blasts", :force => true do |t|

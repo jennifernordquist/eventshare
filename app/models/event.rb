@@ -9,13 +9,19 @@
 #  end_time   :datetime
 #  created_at :datetime        not null
 #  updated_at :datetime        not null
+#  user_id    :integer
+#  host       :string(255)
 #
 
 class Event < ActiveRecord::Base
-  attr_accessible :desc, :end_time, :name, :start_time
+  attr_accessible :desc, :end_time, :name, :start_time, :user_id, :host
+
+  belongs_to :user
 
   has_many :groups
 
   has_one :venue
+
+  has_one :setting
 
 end

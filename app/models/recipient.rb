@@ -14,4 +14,7 @@
 
 class Recipient < ActiveRecord::Base
   attr_accessible :email, :facebook_id, :name, :phone, :rsvp
+
+  has_and_belongs_to_many :groups
+
 end
