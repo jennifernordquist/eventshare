@@ -21,4 +21,8 @@ class DashboardController < ApplicationController
   def flyer
     render "flyer"
   end
+  
+   def newemail
+    render "newemail"
+  end
 end
