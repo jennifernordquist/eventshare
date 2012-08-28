@@ -36,28 +36,25 @@
           Messages
         %div
           %span.label Scheduled Message Blasts:
-          %hr
-            Type  |  Group  |  MM/DD/YYYY, HH:MM
+          - @event.groups.inject([]) { |memo, g| memo.concat g.text_blasts }.compact.select { |tb| !tb.done }.each do |tb|
             %hr
-              %span.muted This is a preview of a blast. This is a preview of a blast. This is a preview of a blast. This is a preview of a blast.
-              %hr
-                Type  |  Group  |  MM/DD/YYYY, HH:MM
-                %hr
-                  %span.muted This is a preview of a blast. This is a preview of a blast. This is a preview of a blast. This is a preview of a blast.
-                  %hr
+              = "Text Blast  |  #{tb.group.name}  |  #{tb.schedule.to_formatted_s(:lock)}"
+            %hr
+            %span.muted= tb.contents
+            %hr
+          - @event.groups.inject([]) { |memo, g| memo.concat g.email_blasts }.compact.select { |eb| !eb.done }.each do |eb|
+            %hr
+              = "Email Blast  |  #{eb.group.name}  |  #{eb.schedule.to_formatted_s(:lock)}"
+            %hr
+            %span.muted= eb.contents
+            %hr
       %section.overview-section
         %header.overview-header
           Flyer
         %div
-          %span.label Required Fields:
-          Phone
-          %hr
-            %span.label Optional Fields:
-            Email
-            %hr
-              %span.label.muted Excluded Fields:
-              %span.muted RSVP
-        %section.overview-section
+        %span.label URL:
+        1jg238trg23i8
+        %hr
     .grid_5.omega
       %section.overview-section
         %header.overview-header
@@ -90,4 +87,3 @@
         %header.overview-header
           Social
         %div
-          Nam sed mi velit. Cras venenatis purus in sem rutrum sagittis. Maecenas a magna nisl, vel tempus diam. Phasellus sed mauris ipsum. Suspendisse vestibulum libero vitae diam convallis malesuada. Integer sem diam, condimentum eu varius non, dictum nec urna. Mauris risus urna, suscipit a feugiat eget, tincidunt vel metus. Phasellus varius, velit ac tristique adipiscing, orci justo bibendum dolor, dictum malesuada justo velit et dui. Quisque vel augue suscipit velit laoreet elementum vitae in quam. Proin porta malesuada interdum. Duis viverra mi elit, vel tempor mi. Aliquam id leo vel tellus elementum ultrices ac eget turpis. Praesent malesuada vestibulum ornare. Proin blandit, neque ultricies blandit varius, urna erat dapibus est, rho...
