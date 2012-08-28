@@ -1,4 +1,8 @@
 Eventshare::Application.routes.draw do
+  authenticated :user do
+    root :to => "events#index"
+  end
+
   root :to => "welcome#welcome"
   get "facebook/create_event"
 
