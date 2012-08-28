@@ -33,7 +33,7 @@ class TextBlast < ActiveRecord::Base
 
     group.recipients.each do |r|
 	    client.account.sms.messages.create({:from => '+17329457342',
-	    					:to => r.phone,
+	    					:to => r.phone.gsub(/[^0-9]/, ""),
 	    					:body => contents})
     end
     done = true
