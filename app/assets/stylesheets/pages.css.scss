@@ -1,3 +1,56 @@
-// Place all the styles related to the pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/* LESS */
+
+/* COLORS */
+
+$grey-dark: #333333;
+
+$grey-light: #CCCCCC;
+
+$blue: #0084A3;
+
+$blue-light: #AFD2D8;
+
+$tan: #D8C1A9;
+
+/* TEXT */
+
+@mixin regular {
+	 font-family: 'Open Sans', Arial, sans-serif;
+}
+@mixin italic {
+	 font-family: 'Open Sans Italic', Arial, sans-serif;
+}
+@mixin bold {
+	font-family: 'Open Sans Bold', Arial, sans-serif;
+}
+@mixin bold-italic {
+	 font-family: 'Open Sans Bold Italic', Arial, sans-serif;
+}
+
+@mixin uppercase {
+	text-transform: uppercase;
+}
+
+@mixin header {
+	@include bold;
+	@include uppercase;
+}
+/* MAIN TEXT STYLES */
+
+body {
+	@include regular;
+	font-size: 10px;
+	line-height: 14px;
+	color: $grey-dark;
+}
+
+#page_header {
+	border-bottom: $grey-light solid 2px;
+	margin-bottom: 2px;
+}
+
+#sidebar {
+	border-right: $grey-light solid 1px;
+	margin-right: -1px;
+}	
+
