@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120828035755) do
+ActiveRecord::Schema.define(:version => 20120828095647) do
 
   create_table "auths", :force => true do |t|
     t.string   "token"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20120828035755) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "user_id"
+    t.integer  "uid"
   end
 
   create_table "email_blasts", :force => true do |t|

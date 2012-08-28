@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Done:</b>
+  <%= @facebook_blast.done %>
+</p>
+
+<p>
+  <b>Contents:</b>
+  <%= @facebook_blast.contents %>
+</p>
+
+<p>
+  <b>Schedule:</b>
+  <%= @facebook_blast.schedule %>
+</p>
+
+<p>
+  <b>Group:</b>
+  <%= @facebook_blast.group_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_facebook_blast_path(@facebook_blast) %> |
+<%= link_to 'Back', facebook_blasts_path %>

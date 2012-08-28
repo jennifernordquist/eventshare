@@ -15,7 +15,7 @@ class DashboardController < ApplicationController
   end
 
   def social
-    render "social"
+    render "dashboard/social"
   end
 
   def flyer

@@ -36,6 +36,7 @@ gem 'omniauth-facebook'
 gem 'devise'
 gem 'cancan'
 gem 'whenever', require: false
+gem 'uuidtools'
 
 group :development do
   gem 'annotate', '~> 2.4.1.beta'

@@ -1,10 +1,12 @@
 Eventshare::Application.routes.draw do
   root :to => "welcome#welcome"
-
+  
+  match '/auth/:provider/callback' => 'auths#create'
+  
   match "/sign_up" => "auth#register" 
   match "/sign_in" => "auth#login" 
 
-  devise_for :users
+  devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks" }
 
   resources :settings
   resources :venues

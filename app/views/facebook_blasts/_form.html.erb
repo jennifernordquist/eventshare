@@ -1,0 +1,33 @@
+<%= form_for(@facebook_blast) do |f| %>
+  <% if @facebook_blast.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@facebook_blast.errors.count, "error") %> prohibited this facebook_blast from being saved:</h2>
+
+      <ul>
+      <% @facebook_blast.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :done %><br />
+    <%= f.check_box :done %>
+  </div>
+  <div class="field">
+    <%= f.label :contents %><br />
+    <%= f.text_field :contents %>
+  </div>
+  <div class="field">
+    <%= f.label :schedule %><br />
+    <%= f.datetime_select :schedule %>
+  </div>
+  <div class="field">
+    <%= f.label :group_id %><br />
+    <%= f.number_field :group_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

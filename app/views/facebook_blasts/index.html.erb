@@ -1,0 +1,29 @@
+<h1>Listing facebook_blasts</h1>
+
+<table>
+  <tr>
+    <th>Done</th>
+    <th>Contents</th>
+    <th>Schedule</th>
+    <th>Group</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @facebook_blasts.each do |facebook_blast| %>
+  <tr>
+    <td><%= facebook_blast.done %></td>
+    <td><%= facebook_blast.contents %></td>
+    <td><%= facebook_blast.schedule %></td>
+    <td><%= facebook_blast.group_id %></td>
+    <td><%= link_to 'Show', facebook_blast %></td>
+    <td><%= link_to 'Edit', edit_facebook_blast_path(facebook_blast) %></td>
+    <td><%= link_to 'Destroy', facebook_blast, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Facebook blast', new_facebook_blast_path %>

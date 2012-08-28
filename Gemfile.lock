@@ -218,4 +218,5 @@ DEPENDENCIES
   thin
   twilio-ruby
   uglifier (>= 1.0.3)
+  uuidtools
   whenever
