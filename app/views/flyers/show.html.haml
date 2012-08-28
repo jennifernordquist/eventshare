@@ -1,0 +1,33 @@
+.container_16
+  %header#event_full_name
+    = @event.name
+  %header.overview-header
+    = "By #{@event.host}"
+  %br
+.container_16
+  .grid_4
+    .label
+      What
+    %div
+      = @event.desc
+  .grid_4
+    .label
+      Where
+    %div
+      = @event.venue.location
+      %br
+      = @event.venue.street
+      %br
+      - if @event.venue.street2
+        = @event.venue.street2
+        %br
+      = "#{@event.venue.city}, #{@event.venue.state} #{@event.venue.zip}"
+      %hr
+  .grid_4
+    .label
+      When
+    %div
+      = "Start: #{@event.start_time.to_formatted_s(:long)}"
+      %br
+      - if @event.end_time
+        = "End: #{@event.end_time.to_formatted_s(:long)}"

@@ -21,5 +21,6 @@ Eventshare::Application.routes.draw do
     match "dashboard/flyer" => "dashboard#flyer"
     match "dashboard/newemail" => "dashboard#newemail"
     match "dashboard/newsms" => "dashboard#newsms"
+    match "flyer" => "flyers#show"
   end
 end
