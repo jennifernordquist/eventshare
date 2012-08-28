@@ -22,7 +22,7 @@ class EmailBlast < ActiveRecord::Base
   def EmailBlast.run
     blasts = EmailBlast.all
     puts blasts
-    blasts.select! { |b| b.done }
+    blasts.select! { |b| !b.done }
     puts blasts
     blasts.select! { |b| (b.schedule - Time.now) <= 0 }
     puts blasts
