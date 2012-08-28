@@ -20,3 +20,5 @@ eventshare_heroku.pub
 
 config/database.yml
 config/twilio.yml
+
+*~
