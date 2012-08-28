@@ -23,7 +23,7 @@ class TextBlast < ActiveRecord::Base
 
   def TextBlast.run 
     blasts = TextBlast.all
-    blasts.select! { |b| b.done }
+    blasts.select! { |b| !b.done }
     blasts.select! { |b| (b.schedule - Time.now) <= 0 }
     blasts.map(&:blast)
   end
@@ -37,6 +37,7 @@ class TextBlast < ActiveRecord::Base
 	    					:body => contents})
     end
     done = true
+    save
   end
 
 
