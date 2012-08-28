@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  skip_authorization_check
   # GET /events
   # GET /events.json
   def index
@@ -40,7 +41,10 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
+    @venue = Venue.create! params[:event][:venue]
+    params[:event].delete :venue
     @event = Event.new(params[:event])
+    @event.user = current_user
 
     respond_to do |format|
       if @event.save

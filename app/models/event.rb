@@ -14,7 +14,8 @@
 #
 
 class Event < ActiveRecord::Base
-  attr_accessible :desc, :end_time, :name, :start_time, :user_id, :host
+  attr_accessible :desc, :end_time, :name, :start_time, :user_id, :host, :venue
+
 
   belongs_to :user
 

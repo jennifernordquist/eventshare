@@ -4,9 +4,9 @@
   %nav
     %ul
       %li.hub-nav
-        %a.hub-nav-link.active{:href => "#"}
+        %a{ :href =>  events_path, :class => "hub-nav-link #{request[:action] == "index" ? "active" : nil}" }
           Current
       %li.hub-nav
-        %a.hub-nav-link{:href => "#"}
+        %a{ :href =>  new_event_path, :class => "hub-nav-link #{request[:action] == "new" ? "active" : nil}" }
           Create New
 = yield

@@ -1,0 +1,54 @@
+.container_16
+  = render "sidebar"
+  #partial.grid_11.prefix_1
+    %header#event_full_name
+      Create Event
+    = form_for Event.new do |f|
+      .grid_4
+        %p
+          %span.label Event Name:
+          .text-field
+            %input{:name => "event[name]", :placeholder => "Cupcake Social", :type => "text"}/
+        %p
+          %span.label Location at Venue:
+          .text-field
+            %input{:name => "event[venue[location]]", :placeholder => "Room #24", :type => "text"}/
+        %p
+          %span.label Street:
+          .text-field
+            %input{:name => "event[venue[street]]", :placeholder => "123 Example Street", :type => "text"}/
+          %br/
+          %span.label Street 2:
+          .text-field
+            %input{:name => "event[venue[street2]]", :placeholder => "Apt. 200", :type => "text"}/
+          %br/
+          %span.label City:
+          .text-field
+            %input{:name => "event[venue[city]]", :placeholder => "Ithica", :type => "text"}/
+          %br/
+          %span.label State:
+          .text-field
+            %input{:name => "event[venue[state]]", :placeholder => "New York", :type => "text"}/
+          %br/
+          %span.label Zip:
+          .text-field
+            %input{:name => "event[venue[zip]]", :placeholder => "20657", :type => "text"}/
+      .grid_6
+        %p
+          %span.label Start Date and Time:
+          %br
+          = datetime_select("event", "start_time", :default => Time.now)
+        %p
+          %span.label End Date and Time:
+          %br
+          = datetime_select("event", "end_time", :default => Time.now)
+        %p
+          %span.label Host:
+          .text-field
+            %input{:name => "event[host]", :placeholder => "Company/Organization", :type => "text"}/
+        %p
+          %span.label Description:
+          .text-area
+            %textarea#description{:name => "event[desc]", :rows => "5", :wrap => "virtual"}
+        %br
+        %input{ :type => "submit", :class => "submit" }
