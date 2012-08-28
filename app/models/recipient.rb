@@ -19,8 +19,28 @@ class Recipient < ActiveRecord::Base
 
   belongs_to :event
 
+  validate :has_group_through_event
   # .first works because all groups belongs to the same event
-  # validates :email, :presence => :true, :if => groups.first.event.setting.require_email
-  # validates :phone, :presence => :true, :if => groups.first.event.setting.require_phone
-  # validates :rsvp, :presence => :true, :if => groups.first.event.setting.require_rsvp
+  validates :email, :presence => :true, :if => Proc.new { setting("email") }
+  validates :phone, :presence => :true, :if => Proc.new { setting("phone") }
+  validates :rsvp, :presence => :true, :if => Proc.new { setting("rsvp") }
+
+  after_create :add_to_all_group
+
+ private
+  def has_group_through_event
+    raise Exception, :message => "Recipient needs an event!" if event.nil?
+    raise Exception, :message => "Event needs a group!" if event.groups.empty?
+  end
+
+  def setting(name)
+    raise Exception, :message => "Event needs a Setting instance!" if event.setting.nil?
+    event.setting.send("require_#{name}")
+  end
+
+  def add_to_all_group
+    unless event.groups.find_by_name("All").recipients.all.include?(self)
+      event.groups.find_by_name("All").recipients << self 
+    end
+  end
 end
