@@ -29,6 +29,9 @@ class TextBlast < ActiveRecord::Base
 
   belongs_to :group
 
+  validates :done, :inclusion => { :in => [true, false] }
+  validates :contents, :schedule, :presence => true
+
   def dispatch
 
   end 

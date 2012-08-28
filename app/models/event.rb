@@ -24,4 +24,5 @@ class Event < ActiveRecord::Base
 
   has_one :setting
 
+  validates :desc, :start_time, :name, :user_id, :host, :presence => true
 end

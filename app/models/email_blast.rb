@@ -15,4 +15,7 @@ class EmailBlast < ActiveRecord::Base
   attr_accessible :contents, :done, :schedule
 
   belongs_to :group
+
+  validates :done, :inclusion => { :in => [true, false] }
+  validates :contents, :schedule, :presence => true
 end

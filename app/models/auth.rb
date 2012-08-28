@@ -16,4 +16,5 @@ class Auth < ActiveRecord::Base
 
   belongs_to :user
 
+  validates :provider, :secret, :token, :presence => true
 end

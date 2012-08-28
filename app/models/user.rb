@@ -40,4 +40,6 @@ class User < ActiveRecord::Base
 
   has_many :events
 
+  validates :email, :uniqueness => true, :presence => true
+  validates :first_name, :last_name, :phone, :presence => true
 end
