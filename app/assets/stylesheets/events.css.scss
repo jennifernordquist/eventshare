@@ -1,3 +1,39 @@
 // Place all the styles related to the Events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+$blue: #0084A3;
+
+a .event {
+	padding:20px;
+	background-color: #ccc;
+	color: #fff;
+	width:100%;
+	font-size: 20px;
+	line-height: 24px;
+	clear: left;
+	margin-bottom: 10px;
+	&:hover {
+		background-color:#fff;
+		color: #ccc;
+	}
+	p {
+		margin-top: -5px;
+		margin-bottom: 5px;
+	}
+		
+}
+
+.event:hover .big-grey, .event.hover .big-grey {
+	color: $blue;
+	}
+
+#mine {
+	margin: 20px 40px 20px 0;
+	float:left;
+	}
+
+.new {
+	float:left;
+	}

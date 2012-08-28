@@ -364,3 +364,7 @@ td {
 	border: 0px;
 	outline: 0px;
 }
+
+.big-grey {
+	@include big-grey;
+}
