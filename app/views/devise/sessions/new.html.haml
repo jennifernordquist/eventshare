@@ -1,0 +1,12 @@
+.container_12
+  %header#event_full_name Sign In
+  = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+    %p
+      %span.label Email
+      .text-field
+        %input{ :type => "email", :name => "user[email]" }
+    %p
+      %span.label Password
+      .text-field
+        %input{ :type => "password", :name => "user[password]" }
+    %input{ :type => "submit", :name => "commit", :class => "submit", :text => "Sign In" }
