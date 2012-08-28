@@ -2,30 +2,35 @@
   = render "hub/sidebar"
   #partial.grid_11.prefix_1
     %header#event_full_name
-      Event Full Name
+      = @event.name 
     .grid_5.suffix_1.alpha
       %section.overview-section
         %header.overview-header
           Event
         %div
           %span.label Date:
-          MM/DD/YYYY - MM/DD/YYYY
+          = "#{@event.start_time.to_date} - #{@event.end_time.to_date}"
           %hr
-            %span.label Time:
-            HH:MM - HH:MM
-            %hr
-              %span.label Host:
-              Organization Name
-              %hr
-                %span.label Venue:
-                Venue Name
-                %hr
-                  %span.label Address:
-                  \#### Street Name Dr, Potomac, MD 20854
-                  %hr
-                    %span.label Description:
-                    This is a description of our event. This is a description of our event. This is a description of our event.
-                    %hr
+          %span.label Time:
+          = "#{@event.start_time.strftime("%H:%M:%S")} - #{@event.end_time.strftime("%H:%M:%S")}"
+          %hr
+          %span.label Host:
+          = @event.host
+          %hr
+          %span.label Address:
+          %br
+          = @event.venue.location
+          %br
+          = @event.venue.street
+          %br
+          - if @event.venue.street2
+            = @event.venue.street2
+            %br
+          = "#{@event.venue.city}, #{@event.venue.state} #{@event.venue.zip}"
+          %hr
+          %span.label Description:
+          = @event.desc
+          %hr
       %section.overview-section
         %header.overview-header
           Messages
@@ -60,15 +65,15 @@
         %div
           .grid_1.alpha.audience-num
             %a.num-block{:href => "#"}
-              12
+              = @event.recipients.count
             Invited
           .grid_1.audience-num
             %a.num-block{:href => "#"}
-              8
+              = @event.recipients.where("RSVP = ?", "yes").count
             %i.icon-ok
           .grid_1.omega.audience-num.suffix_2
             %a.num-block{:href => "#"}
-              4
+              = @event.recipients.where("RSVP = ?", "no").count
             %i.icon-remove
         %hr
           %div
@@ -76,15 +81,10 @@
               Groups:
             .grid_4.omega
               %ul
-                %li.group-members
-                  %a.group-members-link{:href => "#"}
-                    Leaders
-                %li.group-members
-                  %a.group-members-link{:href => "#"}
-                    Participants
-                %li.group-members
-                  %a.group-members-link{:href => "#"}
-                    Admins
+                - @event.groups.each do |g|
+                  %li.group-members
+                    %a.group-members-link{:href => "#"}
+                      = g.name
             %hr
       %section.overview-section
         %header.overview-header
