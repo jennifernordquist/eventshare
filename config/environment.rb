@@ -15,4 +15,4 @@ ActionMailer::Base.smtp_settings = {
 :enable_starttls_auto => true
 }
 
-TWILIO_CONFIG = YAML.load_file("#{RAILS_ROOT}/config/twilio.yml")
+TWILIO_CONFIG = YAML.load_file("#{Rails.root}/config/twilio.yml")
