@@ -52,8 +52,10 @@
         %header.overview-header
           Flyer
         %div
+        Share this link with your audience
+        %br
         %span.label URL:
-        1jg238trg23i8
+        = link_to "#{request.env['HTTP_HOST']}/events/#{@event.id}/flyer", "http://#{request.env['HTTP_HOST']}/events/#{@event.id}/flyer"
         %hr
     .grid_5.omega
       %section.overview-section
