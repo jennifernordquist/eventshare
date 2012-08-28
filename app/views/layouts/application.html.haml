@@ -7,5 +7,10 @@
     = csrf_meta_tags
   %body
     = render "core/nav"
+    - if flash
+      .container_16
+        .grid_6.prefix_5
+          - flash.each do |name, msg|
+            = content_tag :div, msg, :id => "flash_#{name}", :class => "label" if msg.is_a?(String)
     = yield
     = render "core/footer"
