@@ -1,5 +1,4 @@
 class FacebookController < ApplicationController
-  load_and_authorize_resource :class => "FacebookController"
   require 'koala'
 
   def create_event

@@ -1,5 +1,4 @@
 class AuthsController < ApplicationController
-  load_and_authorize_resource
 	def index
 	  @auths = current_user.auths if current_user
 	end
