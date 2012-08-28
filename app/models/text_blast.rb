@@ -22,7 +22,22 @@ class TextBlast < ActiveRecord::Base
   validates :contents, :schedule, :presence => true
 
   def TextBlast.run 
+    blasts = TextBlast.all
+    blasts.select! { |b| b.done }
+    blasts.select! { |b| (b.schedule - Time.now) <= 0 }
+    blasts.map(&:blast)
+  end
 
-  end 
+  def blast
+    client = Twilio::REST::Client.new(TWILIO_CONFIG["account_sid"], TWILIO_CONFIG["auth_token"])
+
+    group.recipients.each do |r|
+	    client.account.sms.messages.create({:from => '+17329457342',
+	    					:to => r.phone,
+	    					:body => contents})
+    end
+    done = true
+  end
+
 
 end

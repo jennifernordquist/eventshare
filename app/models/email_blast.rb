@@ -21,22 +21,16 @@ class EmailBlast < ActiveRecord::Base
 
   def EmailBlast.run
     blasts = EmailBlast.all
-    blasts.collect! { |b| b.done ? nil : b }
-    blasts.compact!
-    blasts.collect! { |b| if (b.schedule - Time.now) <= 0 ? b : nil }
-    blasts.compact!
-    blasts.each do |b|
-      b.blast 
-    end
+    blasts.select! { |b| b.done }
+    blasts.select! { |b| (b.schedule - Time.now) <= 0 }
+    blasts.map(&:blast)
   end
 
   def blast
-    group = Group.find(self.group_id)
-    event = Event.find(group.event_id)
     group.recipients.each do |r|
-	    Notifier.send_email_blast(r, event, self.contents)
+	    Notifier.send_email_blast(r, group.event, contents).deliver
     end
-    self.done = true
+    done = true
   end
 
 end
