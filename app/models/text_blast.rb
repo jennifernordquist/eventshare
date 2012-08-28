@@ -11,17 +11,6 @@
 #  group_id   :integer
 #
 
-# == Schema Information
-#
-# Table name: text_blasts
-#
-#  id         :integer         not null, primary key
-#  done       :boolean
-#  contents   :string(255)
-#  schedule   :datetime
-#  created_at :datetime        not null
-#  updated_at :datetime        not null
-#
 require 'twilio-ruby'
 
 class TextBlast < ActiveRecord::Base
@@ -32,7 +21,7 @@ class TextBlast < ActiveRecord::Base
   validates :done, :inclusion => { :in => [true, false] }
   validates :contents, :schedule, :presence => true
 
-  def dispatch
+  def TextBlast.run 
 
   end 
 

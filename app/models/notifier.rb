@@ -9,7 +9,13 @@ class Notifier < ActionMailer::Base
 
   def signup_email(user)
     mail( :to => user.email,
-          :subject => "Welcome to VentureBoard!")
+          :subject => "Welcome to EventShare!")
+  end
+
+  def send_email_blast(recipient, event, content)
+    mail( :to => recipient.email,
+	  :subject => "Message for #{event.name}",
+	  :body => content )
   end
 
 end
