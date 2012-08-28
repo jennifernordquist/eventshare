@@ -3,12 +3,17 @@
     %a#logo{:href => "#"}
     %nav#page_nav
       %ul
-        %li.page-nav
-          %a.page-nav-link{:href => "#"}
-            My Events
-        %li.page-nav
-          %a.page-nav-link{:href => "#"}
-            Settings
-        %li.page-nav
-          %a.page-nav-link{:href => "#"}
-            Sign Out
+        - if user_signed_in?
+          %li.page-nav
+            %a.page-nav-link{:href => "#"}
+              My Events
+          %li.page-nav
+            %a.page-nav-link{:href => "#"}
+              Settings
+          %li.page-nav
+            %a.page-nav-link{:href =>  destroy_user_session_path, :method => :delete }
+              Sign Out
+        - else
+          %li.page-nav
+            %a.page-nav-link{:href =>  new_user_session_path }
+              Sign In

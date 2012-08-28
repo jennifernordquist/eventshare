@@ -1,0 +1,29 @@
+.container_12
+  %header#event_full_name Sign up
+  = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+    = devise_error_messages!
+    %p
+      %span.label First Name
+      .text-field
+        %input{ :type => "text", :name => "user[first_name]" }
+    %p
+      %span.label Last Name
+      .text-field
+        %input{ :type => "text", :name => "user[last_name]" }
+    %p
+      %span.label Phone
+      .text-field
+        %input{ :type => "text", :name => "user[phone]" }
+    %p
+      %span.label Email
+      .text-field
+        %input{ :type => "email", :name => "user[email]" }
+    %p
+      %span.label Password
+      .text-field
+        %input{ :type => "password", :name => "user[password]" }
+    %p
+      %span.label Password Confirmation
+      .text-field
+        %input{ :type => "password", :name => "user[password_confirmation]" }
+    %input{ :type => "submit", :name => "commit", :class => "submit" }

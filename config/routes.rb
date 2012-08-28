@@ -7,6 +7,9 @@ Eventshare::Application.routes.draw do
   get "dashboard/social"
   get "dashboard/flyer"
 
+  match "/sign_up" => "auth#register" 
+  match "/sign_in" => "auth#login" 
+
   devise_for :users
 
   resources :settings
