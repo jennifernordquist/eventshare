@@ -1,6 +1,4 @@
 class DashboardController < ApplicationController
-  load_and_authorize_resource :class => "DashboardController"
-  
   def overview
     @event = Event.find(params[:event_id])
     render "overview"
