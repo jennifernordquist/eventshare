@@ -23,8 +23,11 @@ class TextBlast < ActiveRecord::Base
 
   def TextBlast.run 
     blasts = TextBlast.all
+    puts blasts
     blasts.select! { |b| !b.done }
+    puts blasts
     blasts.select! { |b| (b.schedule - Time.now) <= 0 }
+    puts blasts
     blasts.map(&:blast)
   end
 
@@ -32,6 +35,7 @@ class TextBlast < ActiveRecord::Base
     client = Twilio::REST::Client.new(TWILIO_CONFIG["account_sid"], TWILIO_CONFIG["auth_token"])
 
     group.recipients.each do |r|
+	    puts r
 	    client.account.sms.messages.create({:from => '+17329457342',
 	    					:to => r.phone.gsub(/[^0-9]/, ""),
 	    					:body => contents})
