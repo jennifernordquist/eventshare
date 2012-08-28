@@ -5,7 +5,7 @@ Eventshare::Application.routes.draw do
 
   devise_for :users
 
-  root :to => "dashboard_controller#index"
+  root :to => "dashboard#index"
 
   resources :groups
 
