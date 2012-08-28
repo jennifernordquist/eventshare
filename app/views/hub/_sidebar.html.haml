@@ -3,22 +3,9 @@
     Event Hub
   %nav
     %ul
-      %li.hub-nav
-        %a.hub-nav-link.active{:href => "#"}
-          Overview
-      %li.hub-nav
-        %a.hub-nav-link{:href => "#"}
-          Event
-      %li.hub-nav
-        %a.hub-nav-link{:href => "#"}
-          Audience
-      %li.hub-nav
-        %a.hub-nav-link{:href => "#"}
-          Messages
-      %li.hub-nav
-        %a.hub-nav-link{:href => "social"}
-          Social
-      %li.hub-nav
-        %a.hub-nav-link{:href => "#"}
-          Flyer
+      - %w{ overview event audience messages social flyer }.each do |p|
+        %li.hub-nav
+          %a{ :href => p == "flyer" ? "#{event_path(params[:event_id])}/flyer" : "#{event_path(params[:event_id])}/dashboard/#{p}",
+              :class => "hub-nav-link #{request[:action] == p ? "active" : nil}" }
+            = p
 = yield
