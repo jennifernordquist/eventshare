@@ -1,5 +1,8 @@
 Eventshare::Application.routes.draw do
   root :to => "welcome#welcome"
+  get "facebook/create_event"
+
+
   
   match '/auth/:provider/callback' => 'auths#create'
   
@@ -14,6 +17,9 @@ Eventshare::Application.routes.draw do
   resources :recipients
   resources :email_blasts
   resources :text_blasts
+  resources :facebook_blasts
+  resources :auths
+
   resources :events do
     match "dashboard/overview" => "dashboard#overview"
     match "dashboard/event" => "dashboard#event"
@@ -25,4 +31,5 @@ Eventshare::Application.routes.draw do
     match "dashboard/newsms" => "dashboard#newsms"
     match "flyer" => "flyers#show"
   end
+  
 end

@@ -31,12 +31,12 @@ gem 'thin'
 gem 'twilio-ruby'
 
 gem 'omniauth'
-gem 'omniauth-facebook'
+gem 'omniauth-facebook', '1.4.0'
+gem 'koala'
 
 gem 'devise'
 gem 'cancan'
 gem 'whenever', require: false
-gem 'uuidtools'
 
 group :development do
   gem 'annotate', '~> 2.4.1.beta'

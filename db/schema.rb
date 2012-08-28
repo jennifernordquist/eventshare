@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120828095647) do
+ActiveRecord::Schema.define(:version => 20120828123518) do
 
   create_table "auths", :force => true do |t|
     t.string   "token"
@@ -37,10 +37,20 @@ ActiveRecord::Schema.define(:version => 20120828095647) do
     t.string   "desc"
     t.datetime "start_time"
     t.datetime "end_time"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.integer  "user_id"
     t.string   "host"
+    t.string   "facebook_id"
+  end
+
+  create_table "facebook_blasts", :force => true do |t|
+    t.boolean  "done"
+    t.string   "contents"
+    t.datetime "schedule"
+    t.integer  "group_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "groups", :force => true do |t|

@@ -15,6 +15,7 @@ class DashboardController < ApplicationController
   end
 
   def social
+    @event = Event.find(params[:event_id])
     render "dashboard/social"
   end
 

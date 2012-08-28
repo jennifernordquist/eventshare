@@ -1,1 +1,5 @@
 <a href="/auth/facebook" class="auth_provider">Connect your Facebook account</a>
+
+<%= link_to "Push Event to Facebook", {:controller => "facebook", :action => "create_event", :event_id => @event.id } %>
+
+
