@@ -1,0 +1,48 @@
+.welcome_panel {
+	margin-top: 8px;
+	width:940px;
+	height:300px;
+}
+
+#welcome_main {
+	background-image:url('../assets/welcome_main.jpg');
+}
+#welcome_overview {
+	background-image:url('../assets/welcome_overview.jpg');
+}
+#welcome_features {
+	background-image:url('../assets/welcome_features.jpg');
+	height:84px;
+}
+#welcome_social {
+	background-image:url('../assets/welcome_social.jpg');
+}
+#welcome_comm {
+	background-image:url('../assets/welcome_comm.jpg');
+}
+#welcome_flyer {
+	background-image:url('../assets/welcome_flyer.jpg');
+}
+#welcome_plans {
+	background-image:url('../assets/welcome_plans.jpg');
+}
+#welcome_start {
+	background-image:url('../assets/welcome_start.jpg');
+	position:relative;
+  margin-bottom: 40px;
+}
+#sign-up {
+	position:absolute;
+	top:150px;
+	left:60px;
+  padding: 8px 10px 8px 10px;
+  background-color: #333;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+.add-margin {
+  margin-right: 160px;
+}
+

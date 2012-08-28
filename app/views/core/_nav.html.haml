@@ -3,6 +3,14 @@
     %a#logo{:href => "/"}
     %nav#page_nav
       %ul
+        - if params[:controller] == "welcome"
+          - %w{ overview features plans }.each do |n|
+            %li.page-nav
+              %a.page-nav-link{ :href => "##{n}" }
+                = n
+          %li.page-nav.add-margin
+            %a.page-nav-link{ :href => "#start" }
+              start
         - if user_signed_in?
           %li.page-nav
             %a.page-nav-link{:href => events_path }

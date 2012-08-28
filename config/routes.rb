@@ -1,5 +1,5 @@
 Eventshare::Application.routes.draw do
-  root :to => "dashboard#overview"
+  root :to => "welcome#welcome"
 
   match "/sign_up" => "auth#register" 
   match "/sign_in" => "auth#login" 

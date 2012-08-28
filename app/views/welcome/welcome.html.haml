@@ -1,0 +1,25 @@
+!!!
+%html
+  %head
+    %title Eventshare
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    = render "core/nav"
+    .container_16
+      #welcome_main.welcome_panel
+      %a{:name => "overview"}
+      #welcome_overview.welcome_panel
+      %a{:name => "features"}
+      #welcome_features.welcome_panel
+      #welcome_social.welcome_panel
+      #welcome_comm.welcome_panel
+      #welcome_flyer.welcome_panel
+      %a{:name => "plans"}
+      #welcome_plans.welcome_panel
+      %a{:name => "start"}
+      #welcome_start.welcome_panel
+        %a{ :href => new_user_registration_path }
+          #sign-up.label
+            Sign Up
