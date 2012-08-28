@@ -89,3 +89,9 @@
         %header.overview-header
           Social
         %div
+          -if current_user.auths.empty?
+            =link_to image_tag("fb_c.png"), "/auth/facebook"
+          -else
+            =link_to image_tag("fb_p.png"), {:controller => "facebook", :action => "create_event", :event_id => @event.id}
+
+

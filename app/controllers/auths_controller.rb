@@ -8,7 +8,7 @@ class AuthsController < ApplicationController
           auth = request.env["omniauth.auth"]
 	  current_user.auths.find_or_create_by_provider_and_uid_and_token!(auth['provider'], auth['uid'], auth['credentials']['token'])
 	  flash[:notice] = "Authentication successful."
-	  redirect_to "dashboard/social" 
+	  redirect_to :back 
 	end
 
 	def destroy

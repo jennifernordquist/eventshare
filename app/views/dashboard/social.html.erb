@@ -1,5 +1,6 @@
-<a href="/auth/facebook" class="auth_provider">Connect your Facebook account</a>
-
-<%= link_to "Push Event to Facebook", {:controller => "facebook", :action => "create_event", :event_id => @event.id } %>
-
+<% if current_user.auths.empty?  %>
+	<%= link_to image_tag("fb_c.png"), "/auth/facebook" %>
+<% else %>
+	<%= link_to image_tag("fb_p.png"), {:controller => "facebook", :action => "create_event", :event_id => @event.id } %>
+<% end %>
 
