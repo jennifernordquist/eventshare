@@ -1,19 +1,13 @@
 Eventshare::Application.routes.draw do
-  resources :settings
-
-  resources :venues
+  root :to => "dashboard#index"
 
   devise_for :users
 
-  root :to => "dashboard#index"
-
+  resources :settings
+  resources :venues
   resources :groups
-
   resources :recipients
-
   resources :email_blasts
-
   resources :text_blasts
-
   resources :events
 end
