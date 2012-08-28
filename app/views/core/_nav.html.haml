@@ -14,5 +14,8 @@
             = link_to "Sign Out", destroy_user_session_path, :method => :delete, :class => "page-nav-link"
         - else
           %li.page-nav
+            %a.page-nav-link{:href =>  new_user_registration_path }
+              Sign Up
+          %li.page-nav
             %a.page-nav-link{:href =>  new_user_session_path }
               Sign In
