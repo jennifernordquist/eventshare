@@ -15,8 +15,7 @@
 #
 
 class Setting < ActiveRecord::Base
-  attr_accessible :offer_email, :offer_phone, :offer_rsvp, :require_email, :require_phone, :require_rsvp
+  attr_accessible :offer_email, :offer_phone, :offer_rsvp, :offer_name, :require_email, :require_phone, :require_rsvp, :require_name
 
   belongs_to :event
-
 end

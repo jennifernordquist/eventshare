@@ -20,10 +20,10 @@ class Recipient < ActiveRecord::Base
   belongs_to :event
 
   validate :has_group_through_event
-  # .first works because all groups belongs to the same event
   validates :email, :presence => :true, :if => Proc.new { setting("email") }
   validates :phone, :presence => :true, :if => Proc.new { setting("phone") }
   validates :rsvp, :presence => :true, :if => Proc.new { setting("rsvp") }
+  validates :name, :presence => :true, :if => Proc.new { setting("name") }
 
   after_create :add_to_all_group
 
