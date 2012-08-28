@@ -18,7 +18,7 @@ class Recipient < ActiveRecord::Base
   has_and_belongs_to_many :groups
 
   # .first works because all groups belongs to the same event
-  validates :email, :presence => :true, :if => groups.first.event.setting.require_email
-  validates :phone, :presence => :true, :if => groups.first.event.setting.require_phone
-  validates :rsvp, :presence => :true, :if => groups.first.event.setting.require_rsvp
+  # validates :email, :presence => :true, :if => groups.first.event.setting.require_email
+  # validates :phone, :presence => :true, :if => groups.first.event.setting.require_phone
+  # validates :rsvp, :presence => :true, :if => groups.first.event.setting.require_rsvp
 end
